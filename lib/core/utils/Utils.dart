@@ -27,4 +27,16 @@ class Utils{
         return Colors.grey;
     }
   }
+  static Color getWithdrawalStatusColor(String status){
+    switch (status) {
+      case 'Completed':
+        return Colors.green;
+      case 'Processing':
+        return AppColors.accentOrange;
+      case 'Failed':
+        return Colors.red;
+      default:
+        return Colors.grey;
+    }
+  }
 }
