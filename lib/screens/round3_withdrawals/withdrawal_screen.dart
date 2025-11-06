@@ -237,21 +237,21 @@ class WithdrawalCard extends StatelessWidget {
           children: [
             // Top Row: Icon, Title, Amount
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Status Icon
                 Container(
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: Utils.getStatusColor(
+                    color: Utils.getWithdrawalStatusColor(
                       withdrawal.status,
                     ).withOpacity(0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Utils.getStatusIcon(withdrawal.status),
-                    color: Utils.getStatusColor(withdrawal.status),
+                    color: Utils.getWithdrawalStatusColor(withdrawal.status),
                     size: 20,
                   ),
                 ),
@@ -304,11 +304,11 @@ class WithdrawalCard extends StatelessWidget {
                               vertical: 5,
                             ),
                             decoration: BoxDecoration(
-                              color: Utils.getStatusColor(
+                              color: Utils.getWithdrawalStatusColor(
                                 withdrawal.status,
                               ).withOpacity(0.15),
                               border: Border.all(
-                                color: Utils.getStatusColor(withdrawal.status),
+                                color: Utils.getWithdrawalStatusColor(withdrawal.status),
                                 width: 1,
                               ),
                               borderRadius: BorderRadius.circular(10),
@@ -318,19 +318,48 @@ class WithdrawalCard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w500,
-                                color: Utils.getStatusColor(withdrawal.status),
+                                color: Utils.getWithdrawalStatusColor(withdrawal.status),
                               ),
                             ),
                           ),
                         ],
-                      ), //change here
+                      ),
+                      SizedBox(height: 12),
+                      // Bottom Row: ID, Fee, Status Badge, Date
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // Left: ID
+                          Expanded(
+                            child: Text(
+                              withdrawal.id,
+                              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                            ),
+                          ),
+                          // Fee
+                          Expanded(
+                            child: Text(
+                              'Fee: \$${withdrawal.fee.toStringAsFixed(2)}',
+                              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                            ),
+                          ),
+                          //this code ....
+                          SizedBox(width: 12),
+                          // Date
+                          Text(
+                            withdrawal.date,
+                            style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                          ),
+                        ],
+                      ),
+                      //change here
                     ],
                   ),
                 ),
                 // Amount
               ],
             ),
-            SizedBox(height: 12),
+            /*SizedBox(height: 12),
             // Bottom Row: ID, Fee, Status Badge, Date
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -357,7 +386,7 @@ class WithdrawalCard extends StatelessWidget {
                   style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                 ),
               ],
-            ),
+            ),*/
           ],
         ),
       ),
