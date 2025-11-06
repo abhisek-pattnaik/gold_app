@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 import 'core/theme/app_theme.dart';
 
 void main() {
-  // runApp(const Round1());//Login Screen
+  runApp(const Round1());//Login Screen
 
   // runApp(
   //   ChangeNotifierProvider(
@@ -59,7 +59,7 @@ class Round3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       home: MultiProvider(
         providers: [

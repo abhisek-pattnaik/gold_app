@@ -4,7 +4,6 @@ import 'package:gold_app/core/theme/app_colors.dart';
 import '../../core/theme/app_text_style.dart';
 import '../../core/utils/AppStrings.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -15,6 +14,16 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   bool _obscurePassword = true;
   bool _isLoginSelected = true;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 60),
 
                 // Welcome Back
-                Text(
-                  AppStrings.welcomeMessage,
-                  style:AppTextStyle.heading1
-                ),
+                Text(AppStrings.welcomeMessage, style: AppTextStyle.heading1),
                 const SizedBox(height: 8),
                 Text(
                   AppStrings.loginMessage,
@@ -130,6 +136,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 8),
                 TextField(
                   style: const TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: AppStrings.emailHint,
                     hintStyle: TextStyle(color: Colors.grey[600]),
@@ -157,6 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 8),
                 TextField(
                   obscureText: _obscurePassword,
+                  controller: _passwordController,
                   style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     hintText: AppStrings.passwordHint,
@@ -191,21 +200,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Login Button
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.accentOrange,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [AppColors.accentOrange, AppColors.accentYellow], // Yellow → Orange
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Handle login
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
