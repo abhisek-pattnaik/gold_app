@@ -21,6 +21,9 @@ class AppStrings{
   static const String successRate="Success Rate";
   static const String myWithdrawals="My Withdrawals";
   static const String myTrades="My Trades";
+  static const String notificationSettings="Notification Settings";
+  static const String myWithdrawal="My Withdrawals";
+  static const String totalWithdrawal="Total Withdrawn";
 
   static const String notifications="Notifications";
 }

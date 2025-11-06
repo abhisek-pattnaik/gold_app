@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gold_app/core/theme/app_colors.dart';
 class Utils{
 
   static IconData getStatusIcon(String status) {
@@ -17,11 +18,11 @@ class Utils{
   static Color getStatusColor(String status) {
     switch (status) {
       case 'Completed':
-        return Colors.green;
+        return AppColors.darkOliveGreen;
       case 'Processing':
-        return Colors.orange;
+        return AppColors.darkGoldenBrown;
       case 'Failed':
-        return Colors.red;
+        return AppColors.deepBrickRed;
       default:
         return Colors.grey;
     }

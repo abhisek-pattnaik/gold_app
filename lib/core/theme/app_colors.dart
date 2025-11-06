@@ -11,7 +11,9 @@ class AppColors {
   static const Color forestGreen = Color(0xFF2A3D2A);
   static const Color darkMaroon = Color(0xFF4B2727);
   static const Color deepBlueGray = Color(0xFF223748);
-
+  static const Color darkOliveGreen = Color(0xFF2D3C29);
+  static const Color darkGoldenBrown = Color(0xFF4D401E);
+  static const Color deepBrickRed = Color(0xFF4A2826);
 
   static const Color accentOrange = Color(0xFFFF8C00);
   static const Color accentYellow = Color(0xFFFFC107);

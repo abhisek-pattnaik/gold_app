@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gold_app/core/theme/app_colors.dart';
+import 'package:gold_app/core/utils/AppStrings.dart';
 import 'package:gold_app/models/Notification.dart';
 
 import 'package:provider/provider.dart';
@@ -57,10 +58,11 @@ class NotificationsScreen extends StatelessWidget {
                         Icon(Icons.settings, color: Colors.amber[700], size: 24),
                         const SizedBox(width: 12),
                         const Text(
-                          'Notification Settings',
+                          AppStrings.notificationSettings,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
+                            color: AppColors.textPrimary
                           ),
                         ),
                       ],
@@ -157,6 +159,7 @@ class NotificationsScreen extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
+                      color: AppColors.textPrimary
                     ),
                   ),
                   const SizedBox(height: 4),
