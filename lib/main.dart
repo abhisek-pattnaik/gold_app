@@ -11,14 +11,14 @@ import 'core/theme/app_theme.dart';
 void main() {
   // runApp(const Round1());//Login Screen
 
-  // runApp(
-  //   ChangeNotifierProvider(
-  //     create: (context) => NotificationProvider(),
-  //     child: const Round2(),
-  //   ),
-  // );// Notification Screen
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => NotificationProvider(),
+      child: const Round2(),
+    ),
+  );// Notification Screen
 
-  runApp(const Round3());// Withdrawals Screen
+  // runApp(const Round3());// Withdrawals Screen
 
 }
 
