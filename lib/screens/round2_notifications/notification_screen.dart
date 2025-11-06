@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gold_app/core/theme/app_colors.dart';
 import 'package:gold_app/models/Notification.dart';
 
 import 'package:provider/provider.dart';
@@ -17,7 +18,7 @@ class NotificationsScreen extends StatelessWidget {
           onPressed: () {},
         ),
         title: const Text('Notifications'),
-        centerTitle: true,
+        centerTitle: false,
         actions: [
           PopupMenuButton(
             onSelected: (value) {
@@ -144,7 +145,7 @@ class NotificationsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
               padding: const EdgeInsets.all(12),
-              child: Icon(notification.icon, color: Colors.white, size: 20),
+              child: Icon(notification.icon, color: notification.iconColor, size: 20),
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -193,11 +194,11 @@ class NotificationsScreen extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           color: notification.tagColor.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(9),
                         ),
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 4,
+                          horizontal: 8,
+                          vertical: 3,
                         ),
                         child: Text(
                           notification.tag,

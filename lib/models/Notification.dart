@@ -9,6 +9,7 @@ class NotificationModel {
   final String timeAgo;
   final String tag;
   final Color tagColor;
+  final Color iconColor;
 
   NotificationModel({
     required this.id,
@@ -19,5 +20,6 @@ class NotificationModel {
     required this.timeAgo,
     required this.tag,
     required this.tagColor,
+    required this.iconColor
   });
 }
